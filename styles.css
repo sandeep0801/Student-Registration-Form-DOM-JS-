@@ -1,0 +1,216 @@
+
+/* Root Variables for Theme Colors */
+:root {
+    --primary-color: #00f7ff;
+    --secondary-color: #007bff;
+    --bg-color: #0a0a0a;
+    --card-bg: #1e1e1e;
+    --text-color: #ffffff;
+    --input-bg: #2a2a2a;
+    --input-border: #444;
+    --success: #28a745;
+    --success-hover: #218838;
+    --warning: #ffc107;
+    --warning-hover: #e0a800;
+    --danger: #dc3545;
+    --danger-hover: #c82333;
+}
+
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 5vh 5vw;
+    min-height: 100vh;
+}
+
+/* Heading */
+h1 {
+    color: var(--primary-color);
+    text-shadow: 0px 0px 10px var(--primary-color);
+    font-size: clamp(1.8rem, 3vw, 3rem); /* Responsive font size */
+    text-align: center;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Form Container */
+form {
+    background: var(--card-bg);
+    padding: 2rem;
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 247, 255, 0.3);
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Input Fields */
+input {
+    width: 100%;
+    padding: 1rem;
+    background: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    color: white;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0px 0px 10px var(--primary-color);
+}
+
+/* Button Styles */
+button {
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* Primary Button */
+button.primary {
+    background: var(--success);
+    color: white;
+}
+
+button.primary:hover {
+    background: var(--success-hover);
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.action-buttons button {
+    padding: 0.8rem;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+/* Edit Button */
+button.edit {
+    background: var(--warning);
+    color: black;
+}
+
+button.edit:hover {
+    background: var(--warning-hover);
+}
+
+/* Delete Button */
+button.delete {
+    background: var(--danger);
+    color: white;
+}
+
+button.delete:hover {
+    background: var(--danger-hover);
+}
+
+/* Table Container */
+.table-container {
+    width: 100%;
+    max-width: 800px;
+    overflow-x: auto;
+    margin-top: 2rem;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--card-bg);
+    box-shadow: 0px 4px 8px rgba(0, 247, 255, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 1rem;
+    border-bottom: 1px solid var(--input-border);
+    text-align: center;
+    word-wrap: break-word;
+}
+
+th {
+    background: var(--secondary-color);
+    color: white;
+    font-weight: bold;
+}
+
+td {
+    font-size: 1rem;
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    form {
+        width: 100%;
+    }
+
+    th, td {
+        padding: 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    button {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+}
+
+@media (max-width: 480px) {
+    th, td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    button {
+        padding: 0.7rem;
+        font-size: 0.8rem;
+    }
+}
